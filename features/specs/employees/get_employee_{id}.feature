@@ -8,7 +8,7 @@
             
             @Consulta_id
             Cenario: Consulta de um funcionario especifico
-            Dado o id 1 do funcionario
+            Dado o id do funcionario
             Quando faco uma solicitacao Get para o servico employees_id
             Entao o codigo de resposta HTTP deve ser igual 200
             E o contrato deve ser valido "schema_get_employee_id.json"
@@ -16,7 +16,7 @@
 
             @Consulta_id_inexistente
             Cenario: Consulta de um funcionario inexistente
-            Dado o id 9999 do funcionario
+            Dado o id inexistente do funcionario
             Quando faco uma solicitacao Get para o servico employees_id
             Entao o codigo de resposta HTTP deve ser igual 200
             E o contrato deve ser valido "schema_get_employee_id_inexis.json"

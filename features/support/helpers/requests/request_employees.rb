@@ -7,9 +7,9 @@ class RequestEmployees
     Http.get("/employee/#{id}", headers: header)
   end
 
-  def post_transfers(headers, body, account_id)
-    Http.post("/prepay-holder/v1/accounts/#{account_id}/transactions/transfers",
-              headers: headers,
+  def post_create(header, body)
+    Http.post('/create',
+              headers: header,
               body: body)
   end
 

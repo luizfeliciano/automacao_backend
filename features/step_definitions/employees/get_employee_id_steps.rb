@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
-Dado('o id {int} do funcionario') do |id|
-  @id = id
+Dado('o id do funcionario') do
+  @id = buscar_massa['funcionario']['id']
+end
+
+Dado('o id inexistente do funcionario') do
+  @id = buscar_massa['funcionario']['id_inexistente']
 end
 
 Quando('faco uma solicitacao Get para o servico employees_id') do

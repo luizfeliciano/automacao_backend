@@ -1,11 +1,6 @@
-prescriptions:
-  nexodata: NXQYAN6
-  amigo: KZH1JPH
-  memed: P13gsF
-  branco:
-  letra: a
-  numero: 1
-  alfanumerico: 1q2w
+funcionario:
+  id: 1
+  id_inexistente: 9999999
 
 partner:
   nexodata: NEXODATA
