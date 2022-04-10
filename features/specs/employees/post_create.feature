@@ -12,4 +12,4 @@
             Quando faco uma solicitacao Post para o servico create
             Entao o codigo de resposta HTTP deve ser igual 200
             E o contrato deve ser valido "schema_post_create.json"
-            E será retornado os dados do funcionario criado
+            E será retornado os dados do funcionario

@@ -8,9 +8,9 @@
             
             @atualiza_funcionario
             Cenario: Atualizar dados de um funcionario
-            Dado o body 'body_create.json'
+            Dado o body 'body_update.json'
             E o id do funcionario
             Quando faco uma solicitacao PUT para o servico update
             Entao o codigo de resposta HTTP deve ser igual 200
-            E o contrato deve ser valido "schema_post_create.json"
+            E o contrato deve ser valido "schema_put_update.json"
             E será retornado os dados do funcionario atualizado

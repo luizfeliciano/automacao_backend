@@ -13,6 +13,12 @@ class RequestEmployees
               body: body)
   end
 
+  def put_update(header, body, id)
+    Http.put("/update/#{id}",
+              headers: header,
+              body: body)
+  end
+
   def get_transfers_transactions_hash_id(headers, account_id, transactions_hash_id)
     Http.get("/prepay-holder/v1/accounts/#{account_id}/transactions/#{transactions_hash_id}",
              headers: headers)

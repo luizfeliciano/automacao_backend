@@ -1,20 +1,15 @@
 # frozen_string_literal: true
 
-Dado('o body {string}') do |massa|
-  @body = carregar_arquivo_massa(massa)
+Quando('faco uma solicitacao PUT para o servico update') do
+  @response = RequestEmployees.new.put_update(Headers.new.padrao, @body.to_json, @id)
 end
 
-Quando('faco uma solicitacao Post para o servico create') do
-  @response = RequestEmployees.new.post_create(Headers.new.padrao, @body.to_json)
-end
-
-Entao('será retornado os dados do funcionario') do
+Entao('será retornado os dados do funcionario atualizado') do
   dados = JSON.parse(@body.to_json, object_class: OpenStruct)
 
   expect(@response.parsed_response['status']).to_not be_nil
   expect(@response.parsed_response['data']).to_not be_nil
   expect(@response.parsed_response['message']).to_not be_nil
-  expect(@response.parsed_response['data']).to have_key 'id'
   expect(@response.parsed_response['data']).to have_key 'name'
   expect(@response.parsed_response['data']).to have_key 'salary'
   expect(@response.parsed_response['data']).to have_key 'age'
