@@ -1,0 +1,28 @@
+funcionario:
+  id: 1
+  id_inexistente: 9999999
+
+partner:
+  nexodata: NEXODATA
+  amigo: AMIGO
+  memed: MEMED
+  branco:
+  letra: a
+  numero: 1
+  alfanumerico: 1q2w
+
+branch:
+  nexodata: FILIAL_16
+  amigo: FILIAL_16
+  memed: FILIAL_16
+  amigo: KZH1JPH
+  memed: VRDS0B
+  branco:
+  letra: a
+  numero: 1
+  alfanumerico: 1q2w
+
+token:
+  tokenInvalido: 5IDBmY9qsbaHNBwNliQId5W6P4cN01MO
+
+id_ponto: 338695
