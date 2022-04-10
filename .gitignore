@@ -1,0 +1,6 @@
+# . nome do arquivo para ignorar
+
+*.html
+*.lock
+.rubocop.yml
+.idea/

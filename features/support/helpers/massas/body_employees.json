@@ -1,0 +1,11 @@
+{
+  "TransactionNumber": "c22fa9a2-dff0-48b8-b773-ab016a522636",
+  "PartnerTxnId_c": 338695,
+  "MemberNumber": "36536775805",
+  "MemberStatus": 1,
+  "StatusCode": "TXN_STAT_PROCESSED",
+  "StatusMessage": "",
+  "CompetencyDate": "2020-06-16T10:09:35",
+  "PartnerTxnDate_c": "2020-06-16T10:09:35",
+  "eventDate": "2020-06-16T10:09:35"
+}
