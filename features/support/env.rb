@@ -14,8 +14,6 @@ ENV["ENV"] = "qa" unless ENV.key? "ENV"
 
 ENVIRONMENT = YAML.load_file("./base_uri.yml")[ENV["ENV"]]
 
-puts "Rodando em #{[ENV["ENV"]]}"
-
 # CLASS PARA FACILITAR AS CHAMADAS DE API
 class Http
   include HTTParty
