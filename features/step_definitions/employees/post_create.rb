@@ -11,9 +11,9 @@ end
 Entao('será retornado os dados do funcionario') do
   dados = JSON.parse(@body.to_json, object_class: OpenStruct)
 
-  expect(@response.parsed_response['status']).to_not be_nil
-  expect(@response.parsed_response['data']).to_not be_nil
-  expect(@response.parsed_response['message']).to_not be_nil
+expect(@response.parsed_response['status']).to_not be_nil
+expect(@response.parsed_response['data']).to_not be_nil
+expect(@response.parsed_response['message']).to_not be_nil
   expect(@response.parsed_response['data']).to have_key 'id'
   expect(@response.parsed_response['data']).to have_key 'name'
   expect(@response.parsed_response['data']).to have_key 'salary'

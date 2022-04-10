@@ -1,1 +1,979 @@
-[{"id":"atualizar-dados-de-um-funcionario","uri":"features/specs/employees/put_update.feature","keyword":"Funcionalidade","name":"Atualizar dados de um funcionario","description":"            Como consumidor,\n            Desejo realizar a atualização dos dados de um funcionario","line":5,"tags":[{"name":"@Funcionarios","line":4}],"elements":[{"id":"atualizar-dados-de-um-funcionario;atualizar-dados-de-um-funcionario","keyword":"Cenario","name":"Atualizar dados de um funcionario","description":"","line":10,"type":"scenario","steps":[{"keyword":"Dado ","name":"o body 'body_update.json'","line":11,"match":{"location":"features/step_definitions/employees/post_create.rb:3"},"result":{"status":"passed","duration":250100}},{"keyword":"E ","name":"o id do funcionario","line":12,"match":{"location":"features/step_definitions/employees/get_employee_id_steps.rb:3"},"result":{"status":"passed","duration":1537100}},{"keyword":"Quando ","name":"faco uma solicitacao PUT para o servico update","line":13,"match":{"location":"features/step_definitions/employees/put_update.rb:3"},"result":{"status":"passed","duration":516177700}},{"keyword":"Entao ","name":"o codigo de resposta HTTP deve ser igual 200","line":14,"match":{"location":"features/step_definitions/employees/get_employees_steps.rb:7"},"result":{"status":"passed","duration":3085700}},{"keyword":"E ","name":"o contrato deve ser valido \"schema_put_update.json\"","line":15,"match":{"location":"features/step_definitions/employees/get_employees_steps.rb:11"},"result":{"status":"passed","duration":5703500}},{"keyword":"E ","name":"será retornado os dados do funcionario atualizado","line":16,"match":{"location":"features/step_definitions/employees/put_update.rb:7"},"result":{"status":"passed","duration":8056100}}],"tags":[{"name":"@Funcionarios","line":4},{"name":"@atualiza_funcionario","line":9}],"before":[{"match":{"location":"features/support/hooks.rb:5"},"result":{"status":"passed","duration":17500}}],"after":[{"match":{"location":"features/support/hooks.rb:9"},"result":{"status":"passed","duration":3401300}}]}]}]
+[
+  {
+    "uri": "features/specs/employees/delete.feature",
+    "id": "excluir-um-funcionario",
+    "keyword": "Funcionalidade",
+    "name": "Excluir um funcionario",
+    "description": "            Como consumidor,\n            Desejo realizar exclusão de um funcionario",
+    "line": 5,
+    "tags": [
+      {
+        "name": "@Funcionarios",
+        "line": 4
+      }
+    ],
+    "comments": [
+      {
+        "value": "# encoding: utf-8",
+        "line": 2
+      }
+    ],
+    "elements": [
+      {
+        "id": "excluir-um-funcionario;excluir-funcionario",
+        "keyword": "Cenario",
+        "name": "Excluir funcionario",
+        "description": "",
+        "line": 10,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@Funcionarios",
+            "line": 4
+          },
+          {
+            "name": "@exclui_funcionario",
+            "line": 9
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16400
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Dado ",
+            "name": "o id do funcionario",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/employees/get_employee_id_steps.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1601900
+            }
+          },
+          {
+            "keyword": "Quando ",
+            "name": "faco uma solicitacao DELETE para o servico delete",
+            "line": 12,
+            "match": {
+              "location": "features/step_definitions/employees/delete.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 512479000
+            }
+          },
+          {
+            "keyword": "Entao ",
+            "name": "o codigo de resposta HTTP deve ser igual 200",
+            "line": 13,
+            "match": {
+              "location": "features/step_definitions/employees/get_employees_steps.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2402800
+            }
+          },
+          {
+            "keyword": "E ",
+            "name": "o contrato deve ser valido \"schema_delete.json\"",
+            "line": 14,
+            "match": {
+              "location": "features/step_definitions/employees/get_employees_steps.rb:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4887900
+            }
+          },
+          {
+            "keyword": "E ",
+            "name": "será retornado mensagem \"Successfully! Record has been deleted\"",
+            "line": 15,
+            "match": {
+              "location": "features/step_definitions/employees/delete.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4167400
+            }
+          }
+        ],
+        "after": [
+          {
+            "output": [
+              "\n\n## REQUEST ##",
+              "\nMETHOD => DELETE",
+              "\nURI => http://dummy.restapiexample.com/api/v1/delete/1",
+              "\n\n## RESPONSE ##",
+              "\nSTATUS CODE => 200",
+              "\nBODY RESPONSE => \"{\\\"status\\\":\\\"success\\\",\\\"data\\\":\\\"1\\\",\\\"message\\\":\\\"Successfully! Record has been deleted\\\"}\""
+            ],
+            "match": {
+              "location": "features/support/hooks.rb:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 112400
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "uri": "features/specs/employees/get_employee_{id}.feature",
+    "id": "consulta-de-funcionario-especifico",
+    "keyword": "Funcionalidade",
+    "name": "Consulta de funcionario especifico",
+    "description": "            Como consumidor,\n            Desejo realizar a consulta de um funcionario especifico",
+    "line": 5,
+    "tags": [
+      {
+        "name": "@Funcionarios",
+        "line": 4
+      }
+    ],
+    "comments": [
+      {
+        "value": "# encoding: utf-8",
+        "line": 2
+      }
+    ],
+    "elements": [
+      {
+        "id": "consulta-de-funcionario-especifico;consulta-de-um-funcionario-especifico",
+        "keyword": "Cenario",
+        "name": "Consulta de um funcionario especifico",
+        "description": "",
+        "line": 10,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@Funcionarios",
+            "line": 4
+          },
+          {
+            "name": "@Consulta_id",
+            "line": 9
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 21200
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Dado ",
+            "name": "o id do funcionario",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/employees/get_employee_id_steps.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2131400
+            }
+          },
+          {
+            "keyword": "Quando ",
+            "name": "faco uma solicitacao Get para o servico employees_id",
+            "line": 12,
+            "match": {
+              "location": "features/step_definitions/employees/get_employee_id_steps.rb:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 510056100
+            }
+          },
+          {
+            "keyword": "Entao ",
+            "name": "o codigo de resposta HTTP deve ser igual 200",
+            "line": 13,
+            "match": {
+              "location": "features/step_definitions/employees/get_employees_steps.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 54300
+            }
+          },
+          {
+            "keyword": "E ",
+            "name": "o contrato deve ser valido \"schema_get_employee_id.json\"",
+            "line": 14,
+            "match": {
+              "location": "features/step_definitions/employees/get_employees_steps.rb:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2919900
+            }
+          },
+          {
+            "keyword": "E ",
+            "name": "será retornado o funcionario especifico do id consultado",
+            "line": 15,
+            "match": {
+              "location": "features/step_definitions/employees/get_employee_id_steps.rb:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2853100
+            }
+          }
+        ],
+        "after": [
+          {
+            "output": [
+              "\n\n## REQUEST ##",
+              "\nMETHOD => GET",
+              "\nURI => http://dummy.restapiexample.com/api/v1/employee/1",
+              "\n\n## RESPONSE ##",
+              "\nSTATUS CODE => 200",
+              "\nBODY RESPONSE => \"{\\\"status\\\":\\\"success\\\",\\\"data\\\":{\\\"id\\\":1,\\\"employee_name\\\":\\\"Tiger Nixon\\\",\\\"employee_salary\\\":320800,\\\"employee_age\\\":61,\\\"profile_image\\\":\\\"\\\"},\\\"message\\\":\\\"Successfully! Record has been fetched.\\\"}\""
+            ],
+            "match": {
+              "location": "features/support/hooks.rb:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 77900
+            }
+          }
+        ]
+      },
+      {
+        "id": "consulta-de-funcionario-especifico;consulta-de-um-funcionario-inexistente",
+        "keyword": "Cenario",
+        "name": "Consulta de um funcionario inexistente",
+        "description": "",
+        "line": 18,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@Funcionarios",
+            "line": 4
+          },
+          {
+            "name": "@Consulta_id_inexistente",
+            "line": 17
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 13300
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Dado ",
+            "name": "o id inexistente do funcionario",
+            "line": 19,
+            "match": {
+              "location": "features/step_definitions/employees/get_employee_id_steps.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1562300
+            }
+          },
+          {
+            "keyword": "Quando ",
+            "name": "faco uma solicitacao Get para o servico employees_id",
+            "line": 20,
+            "match": {
+              "location": "features/step_definitions/employees/get_employee_id_steps.rb:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 687181600
+            }
+          },
+          {
+            "keyword": "Entao ",
+            "name": "o codigo de resposta HTTP deve ser igual 200",
+            "line": 21,
+            "match": {
+              "location": "features/step_definitions/employees/get_employees_steps.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 77900
+            }
+          },
+          {
+            "keyword": "E ",
+            "name": "o contrato deve ser valido \"schema_get_employee_id_inexis.json\"",
+            "line": 22,
+            "match": {
+              "location": "features/step_definitions/employees/get_employees_steps.rb:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3187200
+            }
+          },
+          {
+            "keyword": "E ",
+            "name": "será retornado response nulo",
+            "line": 23,
+            "match": {
+              "location": "features/step_definitions/employees/get_employee_id_steps.rb:26"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 128600
+            }
+          }
+        ],
+        "after": [
+          {
+            "output": [
+              "\n\n## REQUEST ##",
+              "\nMETHOD => GET",
+              "\nURI => http://dummy.restapiexample.com/api/v1/employee/9999999",
+              "\n\n## RESPONSE ##",
+              "\nSTATUS CODE => 200",
+              "\nBODY RESPONSE => \"{\\\"status\\\":\\\"success\\\",\\\"data\\\":null,\\\"message\\\":\\\"Successfully! Record has been fetched.\\\"}\""
+            ],
+            "match": {
+              "location": "features/support/hooks.rb:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 79400
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "uri": "features/specs/employees/get_employees.feature",
+    "id": "consulta-de-funcionarios",
+    "keyword": "Funcionalidade",
+    "name": "Consulta de funcionarios",
+    "description": "            Como consumidor,\n            Desejo realizar a consulta dos funcionarios cadastrados",
+    "line": 5,
+    "tags": [
+      {
+        "name": "@Funcionarios",
+        "line": 4
+      }
+    ],
+    "comments": [
+      {
+        "value": "# encoding: utf-8",
+        "line": 2
+      }
+    ],
+    "elements": [
+      {
+        "id": "consulta-de-funcionarios;consulta-de-todos-os-funcionarios",
+        "keyword": "Cenario",
+        "name": "Consulta de todos os funcionarios",
+        "description": "",
+        "line": 10,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@Funcionarios",
+            "line": 4
+          },
+          {
+            "name": "@Consulta",
+            "line": 9
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15200
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Quando ",
+            "name": "faco uma solicitacao Get para o servico employees",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/employees/get_employees_steps.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 477115300
+            }
+          },
+          {
+            "keyword": "Entao ",
+            "name": "o codigo de resposta HTTP deve ser igual 200",
+            "line": 12,
+            "match": {
+              "location": "features/step_definitions/employees/get_employees_steps.rb:7"
+            },
+            "result": {
+              "status": "failed",
+              "error_message": "\nexpected: 200\n     got: 429\n\n(compared using ==)\n (RSpec::Expectations::ExpectationNotMetError)\n./features/step_definitions/employees/get_employees_steps.rb:8:in `\"o codigo de resposta HTTP deve ser igual {int}\"'\nfeatures/specs/employees/get_employees.feature:12:in `Entao o codigo de resposta HTTP deve ser igual 200'",
+              "duration": 27373400
+            }
+          },
+          {
+            "keyword": "E ",
+            "name": "o contrato deve ser valido \"schema_get_employees.json\"",
+            "line": 13,
+            "match": {
+              "location": "features/step_definitions/employees/get_employees_steps.rb:11"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "E ",
+            "name": "será retornado todos os funcionarios cadastrados",
+            "line": 14,
+            "match": {
+              "location": "features/step_definitions/employees/get_employees_steps.rb:15"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ],
+        "after": [
+          {
+            "output": [
+              "\n\n## REQUEST ##",
+              "\nMETHOD => GET",
+              "\nURI => http://dummy.restapiexample.com/api/v1/employees",
+              "\n\n## RESPONSE ##",
+              "\nSTATUS CODE => 429",
+              "\nBODY RESPONSE => \"<!DOCTYPE html>\\n<html lang=\\\"en\\\">\\n    <head>\\n        <meta charset=\\\"utf-8\\\">\\n        <meta name=\\\"viewport\\\" content=\\\"width=device-width, initial-scale=1\\\">\\n\\n        <title>Too Many Requests</title>\\n\\n        <!-- Fonts -->\\n        <link rel=\\\"dns-prefetch\\\" href=\\\"//fonts.gstatic.com\\\">\\n        <link href=\\\"https://fonts.googleapis.com/css?family=Nunito\\\" rel=\\\"stylesheet\\\">\\n\\n        <!-- Styles -->\\n        <style>\\n            html, body {\\n                background-color: #fff;\\n                color: #636b6f;\\n                font-family: 'Nunito', sans-serif;\\n                font-weight: 100;\\n                height: 100vh;\\n                margin: 0;\\n            }\\n\\n            .full-height {\\n                height: 100vh;\\n            }\\n\\n            .flex-center {\\n                align-items: center;\\n                display: flex;\\n                justify-content: center;\\n            }\\n\\n            .position-ref {\\n                position: relative;\\n            }\\n\\n            .code {\\n                border-right: 2px solid;\\n                font-size: 26px;\\n                padding: 0 15px 0 15px;\\n                text-align: center;\\n            }\\n\\n            .message {\\n                font-size: 18px;\\n                text-align: center;\\n            }\\n        </style>\\n    </head>\\n    <body>\\n        <div class=\\\"flex-center position-ref full-height\\\">\\n            <div class=\\\"code\\\">\\n                429            </div>\\n\\n            <div class=\\\"message\\\" style=\\\"padding: 10px;\\\">\\n                Too Many Requests            </div>\\n        </div>\\n    </body>\\n</html>\\n\""
+            ],
+            "match": {
+              "location": "features/support/hooks.rb:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 88500
+            }
+          }
+        ]
+      },
+      {
+        "id": "consulta-de-funcionarios;consulta-de-todos-os-funcionarios",
+        "keyword": "Cenario",
+        "name": "Consulta de todos os funcionarios",
+        "description": "",
+        "line": 10,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@Funcionarios",
+            "line": 4
+          },
+          {
+            "name": "@Consulta",
+            "line": 9
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 17700
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Quando ",
+            "name": "faco uma solicitacao Get para o servico employees",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/employees/get_employees_steps.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 474063000
+            }
+          },
+          {
+            "keyword": "Entao ",
+            "name": "o codigo de resposta HTTP deve ser igual 200",
+            "line": 12,
+            "match": {
+              "location": "features/step_definitions/employees/get_employees_steps.rb:7"
+            },
+            "result": {
+              "status": "failed",
+              "error_message": "\nexpected: 200\n     got: 429\n\n(compared using ==)\n (RSpec::Expectations::ExpectationNotMetError)\n./features/step_definitions/employees/get_employees_steps.rb:8:in `\"o codigo de resposta HTTP deve ser igual {int}\"'\nfeatures/specs/employees/get_employees.feature:12:in `Entao o codigo de resposta HTTP deve ser igual 200'",
+              "duration": 297500
+            }
+          },
+          {
+            "keyword": "E ",
+            "name": "o contrato deve ser valido \"schema_get_employees.json\"",
+            "line": 13,
+            "match": {
+              "location": "features/step_definitions/employees/get_employees_steps.rb:11"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "E ",
+            "name": "será retornado todos os funcionarios cadastrados",
+            "line": 14,
+            "match": {
+              "location": "features/step_definitions/employees/get_employees_steps.rb:15"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ],
+        "after": [
+          {
+            "output": [
+              "\n\n## REQUEST ##",
+              "\nMETHOD => GET",
+              "\nURI => http://dummy.restapiexample.com/api/v1/employees",
+              "\n\n## RESPONSE ##",
+              "\nSTATUS CODE => 429",
+              "\nBODY RESPONSE => \"<!DOCTYPE html>\\n<html lang=\\\"en\\\">\\n    <head>\\n        <meta charset=\\\"utf-8\\\">\\n        <meta name=\\\"viewport\\\" content=\\\"width=device-width, initial-scale=1\\\">\\n\\n        <title>Too Many Requests</title>\\n\\n        <!-- Fonts -->\\n        <link rel=\\\"dns-prefetch\\\" href=\\\"//fonts.gstatic.com\\\">\\n        <link href=\\\"https://fonts.googleapis.com/css?family=Nunito\\\" rel=\\\"stylesheet\\\">\\n\\n        <!-- Styles -->\\n        <style>\\n            html, body {\\n                background-color: #fff;\\n                color: #636b6f;\\n                font-family: 'Nunito', sans-serif;\\n                font-weight: 100;\\n                height: 100vh;\\n                margin: 0;\\n            }\\n\\n            .full-height {\\n                height: 100vh;\\n            }\\n\\n            .flex-center {\\n                align-items: center;\\n                display: flex;\\n                justify-content: center;\\n            }\\n\\n            .position-ref {\\n                position: relative;\\n            }\\n\\n            .code {\\n                border-right: 2px solid;\\n                font-size: 26px;\\n                padding: 0 15px 0 15px;\\n                text-align: center;\\n            }\\n\\n            .message {\\n                font-size: 18px;\\n                text-align: center;\\n            }\\n        </style>\\n    </head>\\n    <body>\\n        <div class=\\\"flex-center position-ref full-height\\\">\\n            <div class=\\\"code\\\">\\n                429            </div>\\n\\n            <div class=\\\"message\\\" style=\\\"padding: 10px;\\\">\\n                Too Many Requests            </div>\\n        </div>\\n    </body>\\n</html>\\n\""
+            ],
+            "match": {
+              "location": "features/support/hooks.rb:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 99300
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "uri": "features/specs/employees/post_create.feature",
+    "id": "criar-novo-funcionario",
+    "keyword": "Funcionalidade",
+    "name": "Criar novo funcionario",
+    "description": "            Como consumidor,\n            Desejo realizar a criação de um novo funcionario",
+    "line": 5,
+    "tags": [
+      {
+        "name": "@Funcionarios",
+        "line": 4
+      }
+    ],
+    "comments": [
+      {
+        "value": "# encoding: utf-8",
+        "line": 2
+      }
+    ],
+    "elements": [
+      {
+        "id": "criar-novo-funcionario;cria-um-funcionario",
+        "keyword": "Cenario",
+        "name": "Cria um funcionario",
+        "description": "",
+        "line": 10,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@Funcionarios",
+            "line": 4
+          },
+          {
+            "name": "@cria_funcionario",
+            "line": 9
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 17500
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Dado ",
+            "name": "o body 'body_create.json'",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/employees/post_create.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 334100
+            }
+          },
+          {
+            "keyword": "Quando ",
+            "name": "faco uma solicitacao Post para o servico create",
+            "line": 12,
+            "match": {
+              "location": "features/step_definitions/employees/post_create.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 460711700
+            }
+          },
+          {
+            "keyword": "Entao ",
+            "name": "o codigo de resposta HTTP deve ser igual 200",
+            "line": 13,
+            "match": {
+              "location": "features/step_definitions/employees/get_employees_steps.rb:7"
+            },
+            "result": {
+              "status": "failed",
+              "error_message": "\nexpected: 200\n     got: 429\n\n(compared using ==)\n (RSpec::Expectations::ExpectationNotMetError)\n./features/step_definitions/employees/get_employees_steps.rb:8:in `\"o codigo de resposta HTTP deve ser igual {int}\"'\nfeatures/specs/employees/post_create.feature:13:in `Entao o codigo de resposta HTTP deve ser igual 200'",
+              "duration": 353300
+            }
+          },
+          {
+            "keyword": "E ",
+            "name": "o contrato deve ser valido \"schema_post_create.json\"",
+            "line": 14,
+            "match": {
+              "location": "features/step_definitions/employees/get_employees_steps.rb:11"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "E ",
+            "name": "será retornado os dados do funcionario",
+            "line": 15,
+            "match": {
+              "location": "features/step_definitions/employees/post_create.rb:11"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ],
+        "after": [
+          {
+            "output": [
+              "\n\n## REQUEST ##",
+              "\nMETHOD => POST",
+              "\nURI => http://dummy.restapiexample.com/api/v1/create",
+              "\nBODY REQUEST => {\"name\":\"Teste Neopn\",\"salary\":\"1000,00\",\"age\":\"23\"}",
+              "\n\n## RESPONSE ##",
+              "\nSTATUS CODE => 429",
+              "\nBODY RESPONSE => \"<!DOCTYPE html>\\n<html lang=\\\"en\\\">\\n    <head>\\n        <meta charset=\\\"utf-8\\\">\\n        <meta name=\\\"viewport\\\" content=\\\"width=device-width, initial-scale=1\\\">\\n\\n        <title>Too Many Requests</title>\\n\\n        <!-- Fonts -->\\n        <link rel=\\\"dns-prefetch\\\" href=\\\"//fonts.gstatic.com\\\">\\n        <link href=\\\"https://fonts.googleapis.com/css?family=Nunito\\\" rel=\\\"stylesheet\\\">\\n\\n        <!-- Styles -->\\n        <style>\\n            html, body {\\n                background-color: #fff;\\n                color: #636b6f;\\n                font-family: 'Nunito', sans-serif;\\n                font-weight: 100;\\n                height: 100vh;\\n                margin: 0;\\n            }\\n\\n            .full-height {\\n                height: 100vh;\\n            }\\n\\n            .flex-center {\\n                align-items: center;\\n                display: flex;\\n                justify-content: center;\\n            }\\n\\n            .position-ref {\\n                position: relative;\\n            }\\n\\n            .code {\\n                border-right: 2px solid;\\n                font-size: 26px;\\n                padding: 0 15px 0 15px;\\n                text-align: center;\\n            }\\n\\n            .message {\\n                font-size: 18px;\\n                text-align: center;\\n            }\\n        </style>\\n    </head>\\n    <body>\\n        <div class=\\\"flex-center position-ref full-height\\\">\\n            <div class=\\\"code\\\">\\n                429            </div>\\n\\n            <div class=\\\"message\\\" style=\\\"padding: 10px;\\\">\\n                Too Many Requests            </div>\\n        </div>\\n    </body>\\n</html>\\n\""
+            ],
+            "match": {
+              "location": "features/support/hooks.rb:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 104800
+            }
+          }
+        ]
+      },
+      {
+        "id": "criar-novo-funcionario;cria-um-funcionario",
+        "keyword": "Cenario",
+        "name": "Cria um funcionario",
+        "description": "",
+        "line": 10,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@Funcionarios",
+            "line": 4
+          },
+          {
+            "name": "@cria_funcionario",
+            "line": 9
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15400
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Dado ",
+            "name": "o body 'body_create.json'",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/employees/post_create.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 291200
+            }
+          },
+          {
+            "keyword": "Quando ",
+            "name": "faco uma solicitacao Post para o servico create",
+            "line": 12,
+            "match": {
+              "location": "features/step_definitions/employees/post_create.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 488647700
+            }
+          },
+          {
+            "keyword": "Entao ",
+            "name": "o codigo de resposta HTTP deve ser igual 200",
+            "line": 13,
+            "match": {
+              "location": "features/step_definitions/employees/get_employees_steps.rb:7"
+            },
+            "result": {
+              "status": "failed",
+              "error_message": "\nexpected: 200\n     got: 429\n\n(compared using ==)\n (RSpec::Expectations::ExpectationNotMetError)\n./features/step_definitions/employees/get_employees_steps.rb:8:in `\"o codigo de resposta HTTP deve ser igual {int}\"'\nfeatures/specs/employees/post_create.feature:13:in `Entao o codigo de resposta HTTP deve ser igual 200'",
+              "duration": 301100
+            }
+          },
+          {
+            "keyword": "E ",
+            "name": "o contrato deve ser valido \"schema_post_create.json\"",
+            "line": 14,
+            "match": {
+              "location": "features/step_definitions/employees/get_employees_steps.rb:11"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "E ",
+            "name": "será retornado os dados do funcionario",
+            "line": 15,
+            "match": {
+              "location": "features/step_definitions/employees/post_create.rb:11"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ],
+        "after": [
+          {
+            "output": [
+              "\n\n## REQUEST ##",
+              "\nMETHOD => POST",
+              "\nURI => http://dummy.restapiexample.com/api/v1/create",
+              "\nBODY REQUEST => {\"name\":\"Teste Neopn\",\"salary\":\"1000,00\",\"age\":\"23\"}",
+              "\n\n## RESPONSE ##",
+              "\nSTATUS CODE => 429",
+              "\nBODY RESPONSE => \"<!DOCTYPE html>\\n<html lang=\\\"en\\\">\\n    <head>\\n        <meta charset=\\\"utf-8\\\">\\n        <meta name=\\\"viewport\\\" content=\\\"width=device-width, initial-scale=1\\\">\\n\\n        <title>Too Many Requests</title>\\n\\n        <!-- Fonts -->\\n        <link rel=\\\"dns-prefetch\\\" href=\\\"//fonts.gstatic.com\\\">\\n        <link href=\\\"https://fonts.googleapis.com/css?family=Nunito\\\" rel=\\\"stylesheet\\\">\\n\\n        <!-- Styles -->\\n        <style>\\n            html, body {\\n                background-color: #fff;\\n                color: #636b6f;\\n                font-family: 'Nunito', sans-serif;\\n                font-weight: 100;\\n                height: 100vh;\\n                margin: 0;\\n            }\\n\\n            .full-height {\\n                height: 100vh;\\n            }\\n\\n            .flex-center {\\n                align-items: center;\\n                display: flex;\\n                justify-content: center;\\n            }\\n\\n            .position-ref {\\n                position: relative;\\n            }\\n\\n            .code {\\n                border-right: 2px solid;\\n                font-size: 26px;\\n                padding: 0 15px 0 15px;\\n                text-align: center;\\n            }\\n\\n            .message {\\n                font-size: 18px;\\n                text-align: center;\\n            }\\n        </style>\\n    </head>\\n    <body>\\n        <div class=\\\"flex-center position-ref full-height\\\">\\n            <div class=\\\"code\\\">\\n                429            </div>\\n\\n            <div class=\\\"message\\\" style=\\\"padding: 10px;\\\">\\n                Too Many Requests            </div>\\n        </div>\\n    </body>\\n</html>\\n\""
+            ],
+            "match": {
+              "location": "features/support/hooks.rb:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 117000
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "uri": "features/specs/employees/put_update.feature",
+    "id": "atualizar-dados-de-um-funcionario",
+    "keyword": "Funcionalidade",
+    "name": "Atualizar dados de um funcionario",
+    "description": "            Como consumidor,\n            Desejo realizar a atualização dos dados de um funcionario",
+    "line": 5,
+    "tags": [
+      {
+        "name": "@Funcionarios",
+        "line": 4
+      }
+    ],
+    "comments": [
+      {
+        "value": "# encoding: utf-8",
+        "line": 2
+      }
+    ],
+    "elements": [
+      {
+        "id": "atualizar-dados-de-um-funcionario;atualizar-dados-de-um-funcionario",
+        "keyword": "Cenario",
+        "name": "Atualizar dados de um funcionario",
+        "description": "",
+        "line": 10,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@Funcionarios",
+            "line": 4
+          },
+          {
+            "name": "@atualiza_funcionario",
+            "line": 9
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 18000
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Dado ",
+            "name": "o body 'body_update.json'",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/employees/post_create.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 407400
+            }
+          },
+          {
+            "keyword": "E ",
+            "name": "o id do funcionario",
+            "line": 12,
+            "match": {
+              "location": "features/step_definitions/employees/get_employee_id_steps.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1907500
+            }
+          },
+          {
+            "keyword": "Quando ",
+            "name": "faco uma solicitacao PUT para o servico update",
+            "line": 13,
+            "match": {
+              "location": "features/step_definitions/employees/put_update.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 478260700
+            }
+          },
+          {
+            "keyword": "Entao ",
+            "name": "o codigo de resposta HTTP deve ser igual 200",
+            "line": 14,
+            "match": {
+              "location": "features/step_definitions/employees/get_employees_steps.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 69800
+            }
+          },
+          {
+            "keyword": "E ",
+            "name": "o contrato deve ser valido \"schema_put_update.json\"",
+            "line": 15,
+            "match": {
+              "location": "features/step_definitions/employees/get_employees_steps.rb:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2881000
+            }
+          },
+          {
+            "keyword": "E ",
+            "name": "será retornado os dados do funcionario atualizado",
+            "line": 16,
+            "match": {
+              "location": "features/step_definitions/employees/put_update.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 300500
+            }
+          }
+        ],
+        "after": [
+          {
+            "output": [
+              "\n\n## REQUEST ##",
+              "\nMETHOD => PUT",
+              "\nURI => http://dummy.restapiexample.com/api/v1/update/1",
+              "\nBODY REQUEST => {\"name\":\"Teste Neon\",\"salary\":\"1000,00\",\"age\":\"23\"}",
+              "\n\n## RESPONSE ##",
+              "\nSTATUS CODE => 200",
+              "\nBODY RESPONSE => \"{\\\"status\\\":\\\"success\\\",\\\"data\\\":{\\\"name\\\":\\\"Teste Neon\\\",\\\"salary\\\":\\\"1000,00\\\",\\\"age\\\":\\\"23\\\"},\\\"message\\\":\\\"Successfully! Record has been updated.\\\"}\""
+            ],
+            "match": {
+              "location": "features/support/hooks.rb:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 82900
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
