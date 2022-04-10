@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RequestEmployees
   def get_employees(header)
     Http.get('/employees', headers: header)

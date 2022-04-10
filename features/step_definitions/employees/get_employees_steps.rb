@@ -17,7 +17,7 @@ Entao('será retornado todos os funcionarios cadastrados') do
   expect(@response.parsed_response['data']).to_not be_nil
   expect(@response.parsed_response['message']).to_not be_nil
 
-  @response.parsed_response['data'].each do | func |
+  @response.parsed_response['data'].each do |func|
     expect(func).to have_key 'id'
     expect(func).to have_key 'employee_name'
     expect(func).to have_key 'employee_salary'
